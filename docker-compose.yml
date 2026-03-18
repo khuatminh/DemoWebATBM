@@ -42,7 +42,7 @@ services:
     image: phpmyadmin:latest
     container_name: vulnshop-pma
     ports:
-      - "127.0.0.1:8083:80"
+      - "127.0.0.1:8084:80"
     environment:
       PMA_HOST: db
       PMA_USER: root
