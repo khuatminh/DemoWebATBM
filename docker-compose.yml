@@ -3,7 +3,7 @@ services:
     image: php:8.2-apache
     container_name: vulnshop-web
     ports:
-      - "8080:80"
+      - "127.0.0.1:8082:80"
     volumes:
       - ./src:/var/www/html
       - ./php.ini:/usr/local/etc/php/php.ini
@@ -22,7 +22,7 @@ services:
     image: mysql:8.0
     container_name: vulnshop-db
     ports:
-      - "3307:3306"
+      - "127.0.0.1:3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
       MYSQL_DATABASE: vulnshop
@@ -42,7 +42,7 @@ services:
     image: phpmyadmin:latest
     container_name: vulnshop-pma
     ports:
-      - "8081:80"
+      - "127.0.0.1:8083:80"
     environment:
       PMA_HOST: db
       PMA_USER: root
